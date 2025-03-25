@@ -10,7 +10,7 @@ import UIKit
 class SettingsViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "ヘルプ"
+        title = "settings"
         view.backgroundColor = .systemGroupedBackground
     }
 }

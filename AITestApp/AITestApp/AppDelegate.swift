@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,6 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        setupUserProfileIfNeeded()
         return true
     }
 
@@ -31,6 +33,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 
+    private func setupUserProfileIfNeeded() {
+        let realm = try! Realm()
 
+        guard UserProfile.refreshObject == nil else {
+            return
+        }
+
+        debugPrint("realmオブジェクト新規作成")
+        let defaultProfile = UserProfile()
+
+        try! realm.write {
+            realm.add(defaultProfile)
+        }
+    }
 }
 

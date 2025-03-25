@@ -11,7 +11,7 @@ import UIKit
 class HelpViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "ヘルプ"
+        title = "help"
         view.backgroundColor = .white
     }
 }
