@@ -19,7 +19,6 @@ class MyPageViewController: BaseViewController {
         super.viewDidLoad()
 
         title = "MyPage"
-        view.backgroundColor = .white
 
         setupSubviews()
         updateLayout()

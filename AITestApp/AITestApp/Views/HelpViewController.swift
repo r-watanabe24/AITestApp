@@ -12,6 +12,5 @@ class HelpViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "help"
-        view.backgroundColor = .white
     }
 }

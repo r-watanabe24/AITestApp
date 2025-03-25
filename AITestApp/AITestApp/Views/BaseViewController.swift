@@ -13,10 +13,10 @@ class BaseViewController: UIViewController {
     var isPresent: Bool? = false
     var centerX: CGFloat { view.bounds.midX }
     var centerY: CGFloat { view.bounds.midY }
+    var isDarkMode: Bool { UserProfile.shared.isDarkMode }
 
     private var closeButton: UIButton?
 
-    // MARK: - Initializers
     init(isPresent: Bool = false) {
         self.isPresent = isPresent
         super.init(nibName: nil, bundle: nil)
@@ -30,7 +30,7 @@ class BaseViewController: UIViewController {
         super.viewDidLoad()
 
         title = "Base"
-        view.backgroundColor = .white
+        view.backgroundColor = .systemGroupedBackground
 
         setupBaseSubviews()
         updateBaseLayout()
@@ -50,8 +50,11 @@ class BaseViewController: UIViewController {
 
     func updateBaseLayout() {
         if let closeButton = closeButton {
-            let topInset = view.safeAreaInsets.top
-            closeButton.frame = CGRect(x: view.bounds.width - 44, y: topInset + 10, width: 30, height: 30)
+            closeButton.do {
+                $0.setTitleColor(isDarkMode ? .white : .black, for: .normal)
+                let topInset = view.safeAreaInsets.top
+                $0.frame = CGRect(x: view.bounds.width - 44, y: topInset + 10, width: 30, height: 30)
+            }
         }
     }
 

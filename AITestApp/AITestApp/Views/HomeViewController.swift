@@ -13,7 +13,6 @@ class HomeViewController: BaseViewController {
         super.viewDidLoad()
 
         title = "Home"
-        view.backgroundColor = .white
 
         setupSubviews()
         updateLayout()

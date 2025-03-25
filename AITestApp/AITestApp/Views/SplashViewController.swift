@@ -8,7 +8,7 @@
 import UIKit
 import Then
 
-class SplashViewController: BaseViewController {
+class SplashViewController: UIViewController {
 
     var logoText: UILabel!
 
@@ -16,8 +16,8 @@ class SplashViewController: BaseViewController {
         super.viewDidLoad()
 
         title = "Splash"
-        view.backgroundColor = .white
 
+        setUpdarkMode()
         setupSubviews()
         updateLayout()
     }
@@ -36,6 +36,15 @@ class SplashViewController: BaseViewController {
             $0.sizeToFit()
             $0.center.x = centerX
             $0.center.y = centerY
+        }
+    }
+
+    private func setUpdarkMode() {
+        let isDarkMode = UserProfile.shared.isDarkMode
+        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
+            windowScene.windows.forEach { window in
+                window.overrideUserInterfaceStyle = isDarkMode ? .dark : .light
+            }
         }
     }
 }

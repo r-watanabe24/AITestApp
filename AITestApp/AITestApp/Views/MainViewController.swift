@@ -14,7 +14,6 @@ class MainViewController: UITabBarController {
         super.viewDidLoad()
 
         title = "Main"
-        view.backgroundColor = .white
 
         setupTabs()
     }
