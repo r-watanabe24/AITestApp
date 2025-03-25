@@ -1,0 +1,12 @@
+# Xcode
+/.DS_Store
+*.xcworkspace
+xcuserdata/
+*.xcuserstate
+
+# ビルドファイル
+build/
+DerivedData/
+
+# CocoaPods
+Pods/
