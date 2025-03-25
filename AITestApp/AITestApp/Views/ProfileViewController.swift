@@ -48,8 +48,8 @@ class ProfileViewController: BaseViewController {
         saveButton = UIButton(type: .system).then {
             $0.rx.tap.subscribe(onNext: { [weak self] in
                     self?.saveProfile()
-                })
-                .disposed(by: disposeBag)
+            })
+            .disposed(by: disposeBag)
             $0.setTitle("保存", for: .normal)
             $0.setTitleColor(.white, for: .normal)
             $0.titleLabel?.font = .boldSystemFont(ofSize: 16)

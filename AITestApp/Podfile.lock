@@ -12,6 +12,7 @@ PODS:
   - RxRelay (6.8.0):
     - RxSwift (= 6.8.0)
   - RxSwift (6.8.0)
+  - SwiftyJSON (5.0.2)
   - Then (3.0.0)
 
 DEPENDENCIES:
@@ -20,6 +21,7 @@ DEPENDENCIES:
   - RealmSwift
   - RxCocoa
   - RxSwift
+  - SwiftyJSON
   - Then
 
 SPEC REPOS:
@@ -31,6 +33,7 @@ SPEC REPOS:
     - RxCocoa
     - RxRelay
     - RxSwift
+    - SwiftyJSON
     - Then
 
 SPEC CHECKSUMS:
@@ -41,8 +44,9 @@ SPEC CHECKSUMS:
   RxCocoa: 2d33c1e1e5d66492052ad46b11024ae287572880
   RxRelay: 335c78b926a2aea8d863a6d25f1ed3b5ad8e8705
   RxSwift: 4e28be97cbcfeee614af26d83415febbf2bf6f45
+  SwiftyJSON: f5b1bf1cd8dd53cd25887ac0eabcfd92301c6a5a
   Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
 
-PODFILE CHECKSUM: 927d4726f3865c9a9d2de031a6079336f8632bcd
+PODFILE CHECKSUM: 50173646b90d53685331747f0e11a6adce84d682
 
 COCOAPODS: 1.15.2

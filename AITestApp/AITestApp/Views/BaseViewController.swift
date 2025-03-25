@@ -31,6 +31,10 @@ class BaseViewController: UIViewController {
         view.backgroundColor = .systemGroupedBackground
 
         setupBaseSubviews()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         updateBaseLayout()
     }
 

@@ -12,6 +12,7 @@ target 'AITestApp' do
   pod 'Alamofire'
   pod 'R.swift'
   pod 'RealmSwift'
+  pod 'SwiftyJSON'
 end
 
 post_install do |installer|
