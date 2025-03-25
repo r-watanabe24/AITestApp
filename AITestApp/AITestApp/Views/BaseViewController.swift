@@ -11,8 +11,6 @@ import Then
 class BaseViewController: UIViewController {
 
     var isPresent: Bool? = false
-    var centerX: CGFloat { view.bounds.midX }
-    var centerY: CGFloat { view.bounds.midY }
     var isDarkMode: Bool { UserProfile.shared.isDarkMode }
 
     private var closeButton: UIButton?

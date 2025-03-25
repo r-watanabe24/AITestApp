@@ -26,6 +26,7 @@ class MyPageViewController: BaseViewController {
 
     func setupSubviews() {
         tableView = UITableView().then {
+            $0.backgroundColor = .systemGroupedBackground
             $0.delegate = self
             $0.dataSource = self
             $0.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
