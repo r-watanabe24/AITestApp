@@ -29,10 +29,11 @@ class UserProfile: Object {
     }
 
     @objc dynamic var id: String = "user"
-    @objc dynamic var userName: String = ""
+    @objc dynamic var userName: String = "ゲスト"
     @objc dynamic var birthday: String = ""
     @objc dynamic var profileImageUrl: String? = nil
     @objc dynamic var isDarkMode: Bool = false
+    @objc dynamic var isClockedIn: Bool = false
 
     func save(with values: [String: Any?]) {
         guard let realm = self.realm else { return }
@@ -48,10 +49,11 @@ class UserProfile: Object {
     func reset() {
         guard let realm = self.realm else { return }
         try? realm.write {
-            self.userName = ""
+            self.userName = "ゲスト"
             self.birthday = ""
             self.profileImageUrl = nil
             self.isDarkMode = false
+            self.isClockedIn = false
         }
     }
 

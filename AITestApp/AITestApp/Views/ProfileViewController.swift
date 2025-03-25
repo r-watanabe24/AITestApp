@@ -15,6 +15,7 @@ class ProfileViewController: BaseViewController {
     private let disposeBag = DisposeBag()
 
     var userNameTextField: UITextField!
+    var birthdayLabel: UILabel!
     var birthdayPicker: UIDatePicker!
     var saveButton: UIButton!
 
@@ -36,6 +37,12 @@ class ProfileViewController: BaseViewController {
         userNameTextField = UITextField().then {
             $0.placeholder = "ユーザー名"
             $0.borderStyle = .roundedRect
+            view.addSubview($0)
+        }
+
+        birthdayLabel = UILabel().then {
+            $0.text = "生年月日"
+            $0.font = .systemFont(ofSize: 16)
             view.addSubview($0)
         }
 
@@ -67,8 +74,12 @@ class ProfileViewController: BaseViewController {
             $0.frame = CGRect(x: padding, y: 100, width: width - padding * 2, height: 40)
         }
 
+        birthdayLabel.do {
+            $0.frame = CGRect(x: padding, y: userNameTextField.frame.maxY + 24, width: 200, height: 30)
+        }
+
         birthdayPicker.do {
-            $0.frame = CGRect(x: padding, y: userNameTextField.frame.maxY + 24, width: width - padding * 2, height: 100)
+            $0.frame = CGRect(x: padding, y: birthdayLabel.frame.maxY + 24, width: width - padding * 2, height: 100)
         }
 
         saveButton.do {
