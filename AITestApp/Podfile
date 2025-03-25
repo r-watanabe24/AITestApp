@@ -9,4 +9,6 @@ target 'AITestApp' do
   pod 'Then'
   pod 'RxSwift'
   pod 'RxCocoa'
+  pod 'Alamofire'
+  pod 'R.swift'
 end

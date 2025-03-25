@@ -82,7 +82,6 @@
 				3FDF1EA4B9DEB332B99A71DA /* Pods-AITestApp.debug.xcconfig */,
 				5BCBDC8A3D61D8838177F68B /* Pods-AITestApp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -94,6 +93,7 @@
 			buildConfigurationList = 559962432D9231FD00B0CEDE /* Build configuration list for PBXNativeTarget "AITestApp" */;
 			buildPhases = (
 				C8FBBE94D86624D8F2DD4572 /* [CP] Check Pods Manifest.lock */,
+				559963FB2D9256D700B0CEDE /* ShellScript */,
 				5599622C2D9231FB00B0CEDE /* Sources */,
 				5599622D2D9231FB00B0CEDE /* Frameworks */,
 				5599622E2D9231FB00B0CEDE /* Resources */,
@@ -173,6 +173,26 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AITestApp/Pods-AITestApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		559963FB2D9256D700B0CEDE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				$SRCROOT/R.generated.swift,
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/newOutputFile",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/AITestApp/R.generated.swift\"\n\n";
+		};
 		C8FBBE94D86624D8F2DD4572 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -216,6 +236,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AITestApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -244,6 +265,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AITestApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

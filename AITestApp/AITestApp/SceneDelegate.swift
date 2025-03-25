@@ -10,13 +10,41 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    private var splashWindow: UIWindow?
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        guard let windowScene = scene as? UIWindowScene else { return }
+
+        let mainVC = MainViewController()
+        let mainWindow = UIWindow(windowScene: windowScene)
+        mainWindow.rootViewController = mainVC
+        self.window = mainWindow
+        mainWindow.makeKeyAndVisible()
+
+        showSplashScreen(over: windowScene)
+    }
+
+    private func showSplashScreen(over windowScene: UIWindowScene) {
+        splashWindow = UIWindow(windowScene: windowScene)
+        splashWindow?.windowLevel = .alert + 1
+        splashWindow?.backgroundColor = .white
+
+        let splashVC = SplashViewController()
+        splashWindow?.rootViewController = splashVC
+        splashWindow?.makeKeyAndVisible()
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            UIView.animate(withDuration: 0.3, animations: { [weak self] in
+                self?.splashWindow?.alpha = 0
+            }) { [weak self] _ in
+                self?.splashWindow?.isHidden = true
+                self?.splashWindow = nil
+            }
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
