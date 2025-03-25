@@ -8,7 +8,7 @@
 import UIKit
 import Then
 
-class MainViewController: UIViewController {
+class MainViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,13 +16,18 @@ class MainViewController: UIViewController {
         title = "Main"
         view.backgroundColor = .white
 
-        setupSubviews()
-        updateLayout()
+        setupTabs()
     }
 
-    func setupSubviews() {
-    }
+    func setupTabs() {
+        let homeVC = HomeViewController()
+        let homeTab = UINavigationController(rootViewController: homeVC)
+        homeVC.tabBarItem = UITabBarItem(title: "ホーム", image: UIImage(systemName: "house"), tag: 0)
 
-    func updateLayout() {
+        let myPageVC = MyPageViewController()
+        let myPageTab = UINavigationController(rootViewController: myPageVC)
+        myPageVC.tabBarItem = UITabBarItem(title: "マイページ", image: UIImage(systemName: "person.crop.circle"), tag: 1)
+
+        viewControllers = [homeTab, myPageTab]
     }
 }
