@@ -36,7 +36,6 @@ class HomeViewController: BaseViewController {
         userNameLabel = UILabel().then {
             $0.font = .systemFont(ofSize: 20, weight: .bold)
             $0.textAlignment = .center
-            $0.text = "ようこそ、\(UserProfile.shared.userName) さん"
             view.addSubview($0)
         }
 
@@ -88,6 +87,7 @@ class HomeViewController: BaseViewController {
 
         userNameLabel.do {
             $0.frame = CGRect(x: padding, y: 120, width: width - padding * 2, height: 28)
+            $0.text = "ようこそ、\(UserProfile.shared.userName) さん"
         }
 
         statusLabel.do {
