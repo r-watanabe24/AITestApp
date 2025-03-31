@@ -11,6 +11,7 @@ import RxSwift
 import RxCocoa
 import SwiftyJSON
 import Then
+import SVProgressHUD
 
 class HelpViewController: BaseViewController {
 
@@ -115,15 +116,24 @@ class HelpViewController: BaseViewController {
         tableView.reloadData()
         scrollToBottom()
 
-        APIClient.shared.get(Constants.Urls.help, parameters: ["message": text])
+        let modelType = UserDefaults.standard.bool(forKey: Constants.helpModelKey) ? 1 : 0
+        let params: [String : Any] = [
+            "message": text,
+            "modelType": modelType
+        ]
+        SVProgressHUD.setDefaultMaskType(.none)
+        SVProgressHUD.show()
+        APIClient.shared.get(Constants.Urls.help, parameters: params)
             .observe(on: MainScheduler.instance)
             .subscribe(onSuccess: { [weak self] json in
                 let reply = Message(json: json)
                 self?.messages.append(reply)
                 self?.tableView.reloadData()
                 self?.scrollToBottom()
+                SVProgressHUD.dismiss()
             }, onFailure: { error in
                 print("エラー: \(error)")
+                SVProgressHUD.dismiss()
             })
             .disposed(by: disposeBag)
     }
