@@ -12,6 +12,9 @@ PODS:
   - RxRelay (6.8.0):
     - RxSwift (= 6.8.0)
   - RxSwift (6.8.0)
+  - SVProgressHUD (2.3.1):
+    - SVProgressHUD/Core (= 2.3.1)
+  - SVProgressHUD/Core (2.3.1)
   - SwiftyJSON (5.0.2)
   - Then (3.0.0)
 
@@ -21,6 +24,7 @@ DEPENDENCIES:
   - RealmSwift
   - RxCocoa
   - RxSwift
+  - SVProgressHUD
   - SwiftyJSON
   - Then
 
@@ -33,6 +37,7 @@ SPEC REPOS:
     - RxCocoa
     - RxRelay
     - RxSwift
+    - SVProgressHUD
     - SwiftyJSON
     - Then
 
@@ -44,9 +49,10 @@ SPEC CHECKSUMS:
   RxCocoa: 2d33c1e1e5d66492052ad46b11024ae287572880
   RxRelay: 335c78b926a2aea8d863a6d25f1ed3b5ad8e8705
   RxSwift: 4e28be97cbcfeee614af26d83415febbf2bf6f45
+  SVProgressHUD: 4837c74bdfe2e51e8821c397825996a8d7de6e22
   SwiftyJSON: f5b1bf1cd8dd53cd25887ac0eabcfd92301c6a5a
   Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
 
-PODFILE CHECKSUM: 50173646b90d53685331747f0e11a6adce84d682
+PODFILE CHECKSUM: 41b62056e3e06ab75d1cf7f6aa45e114cc785c50
 
 COCOAPODS: 1.15.2
