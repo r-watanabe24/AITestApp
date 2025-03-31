@@ -8,8 +8,10 @@
 import Foundation
 
 struct Constants {
+    static let helpModelKey = "isUseLLM"
+
     struct Urls {
-        private static let baseURL = "http://192.168.0.6:3000"
+        private static let baseURL = "http://localhost:3000/"
         static let help = "\(baseURL)/help"
     }
 }

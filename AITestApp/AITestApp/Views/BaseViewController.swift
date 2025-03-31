@@ -7,6 +7,7 @@
 
 import UIKit
 import Then
+import SVProgressHUD
 
 class BaseViewController: UIViewController {
 
@@ -67,5 +68,6 @@ class BaseViewController: UIViewController {
 
     @objc private func didTapClose() {
         dismiss(animated: true, completion: nil)
+        SVProgressHUD.dismiss()
     }
 }

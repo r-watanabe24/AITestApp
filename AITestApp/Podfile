@@ -13,6 +13,7 @@ target 'AITestApp' do
   pod 'R.swift'
   pod 'RealmSwift'
   pod 'SwiftyJSON'
+  pod 'SVProgressHUD'
 end
 
 post_install do |installer|
